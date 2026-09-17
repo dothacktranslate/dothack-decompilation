@@ -1,0 +1,6 @@
+[submodule "extern/ccc"]
+	path = extern/ccc
+	url = git@github.com:chaoticgd/ccc.git
+[submodule "extern/wibo"]
+	path = extern/wibo
+	url = git@github.com:decompals/wibo.git

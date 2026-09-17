@@ -14,3 +14,9 @@ expected/
 __pycache__/
 *.pyc
 bin/
+
+# Proprietary Metrowerks compiler binaries
+tools/mwcc/
+
+# Downloaded wibo executable
+tools/wibo
