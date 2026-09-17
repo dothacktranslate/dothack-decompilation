@@ -1,0 +1,70 @@
+ELF Header:
+  Magic:   7f 45 4c 46 01 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF32
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              EXEC (Executable file)
+  Machine:                           MIPS R3000
+  Version:                           0x1
+  Entry point address:               0x100008
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          19222428 (bytes into file)
+  Flags:                             0x20924000, 5900, eabi64, mips3
+  Size of this header:               52 (bytes)
+  Size of program headers:           32 (bytes)
+  Number of program headers:         6
+  Size of section headers:           40 (bytes)
+  Number of section headers:         24
+  Section header string table index: 1
+
+Section Headers:
+  [Nr] Name              Type            Addr     Off    Size   ES Flg Lk Inf Al
+  [ 0]                   NULL            00000000 000000 000000 00      0   0  0
+  [ 1] .shstrtab         STRTAB          00000000 278980 0000d9 01      0   0  1
+  [ 2] .strtab           STRTAB          00000000 278a60 057ce4 01      0   0  1
+  [ 3] .symtab           SYMTAB          00000000 2d0750 08a370 10      2 26639  1
+  [ 4] main              PROGBITS        00100000 000100 278880 01 WAX  0   0 128
+  [ 5] .relmain          REL             00000000 115f310 045d40 08      3   4  0
+  [ 6] gcmn.prg          PROGBITS        00400800 278980 000000 01 WAX  0   0 128
+  [ 7] .relgcmn.prg      REL             00000000 11a5050 090830 08      3   6  0
+  [ 8] demo.prg          PROGBITS        00400800 278980 000000 01 WAX  0   0 128
+  [ 9] .reldemo.prg      REL             00000000 1235880 004a60 08      3   8  0
+  [10] desktop.prg       PROGBITS        00400800 278980 000000 01 WAX  0   0 128
+  [11] .reldesktop.prg   REL             00000000 123a2e0 015720 08      3  10  0
+  [12] toppage.prg       PROGBITS        00400800 278980 000000 01 WAX  0   0 128
+  [13] .reltoppage.prg   REL             00000000 124fa00 005558 08      3  12  0
+  [14] heap              PROGBITS        00730600 278980 000000 01  WA  0   0 16
+  [15] .mwcats           LOUSER+0x4a2a82 00000000 1156550 002aa4 01      4   0  4
+  [16] .mwcats           LOUSER+0x4a2a82 00000000 1159000 005660 01      6   0  4
+  [17] .mwcats           LOUSER+0x4a2a82 00000000 115e660 000410 01      8   0  4
+  [18] .mwcats           LOUSER+0x4a2a82 00000000 115ea70 000708 01     10   0  4
+  [19] .mwcats           LOUSER+0x4a2a82 00000000 115f180 000188 01     12   0  4
+  [20] .debug            MIPS_DEBUG      00000000 35aac0 cb3be7 01      0   0  1
+  [21] .line             MIPS_DEBUG      00000000 100e6b0 147ea0 01      0   0  1
+  [22] .comment          PROGBITS        00000000 1254f58 00002b 01      0   0  1
+  [23] .reginfo          MIPS_REGINFO    00000000 1254f84 000018 01      0   0  4
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings), I (info),
+  L (link order), O (extra OS processing required), G (group), T (TLS),
+  C (compressed), x (unknown), o (OS specific), E (exclude),
+  D (mbind), p (processor specific)
+
+Program Headers:
+  Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align
+  LOAD           0x000100 0x00100000 0x00100000 0x278880 0x300800 RWE 0x80
+  LOAD           0x278980 0x00400800 0x00400800 0x00000 0x32fe00 RWE 0x80
+  LOAD           0x278980 0x00400800 0x00400800 0x00000 0x0fc00 RWE 0x80
+  LOAD           0x278980 0x00400800 0x00400800 0x00000 0x69b80 RWE 0x80
+  LOAD           0x278980 0x00400800 0x00400800 0x00000 0x2a300 RWE 0x80
+  LOAD           0x278980 0x00730600 0x00730600 0x00000 0x00000 RW  0x10
+
+ Section to Segment mapping:
+  Segment Sections...
+   00     main 
+   01     gcmn.prg demo.prg desktop.prg toppage.prg 
+   02     gcmn.prg demo.prg desktop.prg toppage.prg 
+   03     gcmn.prg demo.prg desktop.prg toppage.prg 
+   04     gcmn.prg demo.prg desktop.prg toppage.prg 
+   05     heap 

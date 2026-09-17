@@ -1,0 +1,13 @@
+disc/infection/root/MODULES/CDVDFSV.IRX
+disc/infection/root/MODULES/CDVDMAN.IRX
+disc/infection/root/MODULES/LIBSD.IRX
+disc/infection/root/MODULES/MCMAN.IRX
+disc/infection/root/MODULES/MCSERV.IRX
+disc/infection/root/MODULES/MODHSYN.IRX
+disc/infection/root/MODULES/MODMIDI.IRX
+disc/infection/root/MODULES/PADMAN.IRX
+disc/infection/root/MODULES/SDRDRV.IRX
+disc/infection/root/MODULES/SEWORDS.IRX
+disc/infection/root/MODULES/SIO2MAN.IRX
+disc/infection/root/MODULES/SNDBASE.IRX
+disc/infection/root/SLUS_202.67
