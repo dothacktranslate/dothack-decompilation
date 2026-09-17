@@ -13,3 +13,4 @@ expected/
 .venv/
 __pycache__/
 *.pyc
+bin/

@@ -1,0 +1,69 @@
+name: ".hack//INFECTION (USA) - SLUS_202.67"
+
+# SHA-1 of build/infection/SLUS_202.67.main.bin
+sha1: 644ab53fddcc25441a85e7781d8393e70b7f67d8
+
+options:
+  basename: SLUS_202.67
+  base_path: ../..
+
+  target_path: build/infection/SLUS_202.67.main.bin
+
+  platform: ps2
+  compiler: MWCCPS2
+
+  asm_path: asm/infection
+  src_path: src/infection
+  build_path: build/infection
+  asset_path: bin/infection
+
+  ld_script_path: config/infection/SLUS_202.67.ld
+
+  symbol_addrs_path:
+    - config/infection/symbol_addrs.txt
+
+  reloc_addrs_path:
+    - config/infection/reloc_addrs.txt
+
+  create_c_files: False
+  do_c_func_detection: False
+  find_file_boundaries: False
+
+  o_as_suffix: True
+  named_regs_for_c_funcs: False
+
+  string_encoding: ASCII
+  data_string_encoding: ASCII
+
+segments:
+  - name: main
+    type: code
+
+    # Extracted image offset 0 maps to EE address 0x00100000.
+    start: 0x000000
+    vram: 0x00100000
+
+    # ELF p_memsz 0x300800 - p_filesz 0x278880.
+    bss_size: 0x87F80
+
+    subalign: null
+
+    subsegments:
+      # Resident EE code.
+      #
+      # Original ELF:
+      # 0x00100000 -> 0x001DAC80
+      #
+      # Runtime image:
+      # 0x000000 -> 0x0DAC80
+      - [0x000000, asm, main/text]
+
+      # Beginning at 0x001DAC80 the original symbols identify .vutext.
+      # Keep everything after this opaque for the initial bootstrap.
+      - [0x0DAC80, databin, main/post_text]
+
+      # Initialized runtime data ends at EE address 0x00378880.
+      # Remaining PT_LOAD memory is uninitialized.
+      - { type: bss, vram: 0x00378880, name: main/bss }
+
+  - [0x278880]
