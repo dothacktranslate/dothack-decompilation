@@ -1,0 +1,15 @@
+# Original game files
+disc/
+*.iso
+*.bin
+*.cue
+
+# Generated files
+build/
+asm/
+expected/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
