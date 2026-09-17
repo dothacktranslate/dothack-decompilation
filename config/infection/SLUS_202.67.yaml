@@ -21,6 +21,7 @@ options:
 
   symbol_addrs_path:
     - config/infection/symbol_addrs.txt
+    - config/infection/manual_symbols.txt
 
   reloc_addrs_path:
     - config/infection/reloc_addrs.txt
@@ -56,7 +57,9 @@ segments:
       #
       # Runtime image:
       # 0x000000 -> 0x0DAC80
-      - [0x000000, asm, main/text]
+      - [0x000000, asm, main/pre_syspad]
+      - [0x002390, asm, prog/system/syspad]
+      - [0x003410, asm, main/post_syspad]
 
       # Beginning at 0x001DAC80 the original symbols identify .vutext.
       # Keep everything after this opaque for the initial bootstrap.

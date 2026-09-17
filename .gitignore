@@ -20,3 +20,7 @@ tools/mwcc/
 
 # Downloaded wibo executable
 tools/wibo
+
+# Local step logs and temporary backups
+/step*.log
+/*.step*-backup
