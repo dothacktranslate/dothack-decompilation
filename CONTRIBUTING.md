@@ -30,10 +30,6 @@ To regenerate the current target inventory and objdiff report:
 
     scripts/objdiff_report.sh
 
-To verify the first matching function independently:
-
-    python3 scripts/verify_setanalogstick.py
-
 The initial progress scope covers resident EE functions only. Overlays, VU
 microcode, and IOP modules will be tracked separately when their pipelines
 are introduced.
