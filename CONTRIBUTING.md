@@ -37,3 +37,26 @@ To verify the first matching function independently:
 The initial progress scope covers resident EE functions only. Overlays, VU
 microcode, and IOP modules will be tracked separately when their pipelines
 are introduced.
+
+## Updating the Public Progress Report
+
+When a matching-source contribution changes decompilation progress, regenerate
+the local objdiff report before committing:
+
+    scripts/objdiff_report.sh
+
+Then export and validate the public snapshot:
+
+    python3 scripts/export_public_report.py
+    python3 scripts/validate_public_report.py
+
+The resulting file is:
+
+    config/infection/report.json
+
+Commit that report together with the source change that caused the progress
+change.
+
+GitHub Actions does not receive the retail executable or proprietary
+Metrowerks compiler. CI validates and publishes the locally verified progress
+snapshot instead.

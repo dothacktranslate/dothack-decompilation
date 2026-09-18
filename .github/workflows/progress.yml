@@ -1,0 +1,49 @@
+name: Decompilation progress
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  progress:
+    name: Validate progress report
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+
+      - name: Validate public objdiff report
+        run: |
+          python3 scripts/validate_public_report.py \
+            config/infection/report.json
+
+      - name: Prepare decomp.dev artifact
+        if: github.event_name != 'pull_request'
+        run: |
+          mkdir -p build/publish
+          cp \
+            config/infection/report.json \
+            build/publish/report.json
+
+      - name: Upload decompilation report
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-artifact@v7
+        with:
+          name: infection_report
+          path: build/publish/report.json
+          if-no-files-found: error
+          retention-days: 90
