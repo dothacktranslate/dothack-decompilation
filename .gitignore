@@ -21,6 +21,18 @@ tools/mwcc/
 # Downloaded wibo executable
 tools/wibo
 
-# Local step logs and temporary backups
-/step*.log
+# Local research and temporary checkpoint artifacts
+/step[0-9]*
 /*.step*-backup
+
+# Generated project files
+/objdiff.json
+/objdiff.json.*
+/config/infection/SLUS_202.67.ld
+/config/infection/versions.json
+/undefined_funcs_auto.txt
+/undefined_syms_auto.txt
+/include/macro.inc
+
+# Local reverse-engineering exports
+/ghidra-export/
