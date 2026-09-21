@@ -1,0 +1,46 @@
+# Detect text files automatically.
+* text=auto
+
+# Project source and scripts always use LF.
+*.c       text eol=lf
+*.cc      text eol=lf
+*.cpp     text eol=lf
+*.h       text eol=lf
+*.hpp     text eol=lf
+*.s       text eol=lf
+*.asm     text eol=lf
+*.py      text eol=lf
+*.sh      text eol=lf
+
+# Configuration and documentation.
+*.yml     text eol=lf
+*.yaml    text eol=lf
+*.json    text eol=lf
+*.toml    text eol=lf
+*.ini     text eol=lf
+*.cfg     text eol=lf
+*.xml     text eol=lf
+*.md      text eol=lf
+*.txt     text eol=lf
+
+# Native Windows command scripts, if we add any.
+*.bat     text eol=crlf
+*.cmd     text eol=crlf
+
+# Binary files must never undergo line-ending conversion.
+*.png     binary
+*.jpg     binary
+*.jpeg    binary
+*.gif     binary
+*.ico     binary
+*.pdf     binary
+*.docx    binary
+*.zip     binary
+*.7z      binary
+*.exe     binary
+*.dll     binary
+*.o       binary
+*.obj     binary
+*.elf     binary
+*.iso     binary
+*.bin     binary
